@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "stack": "Auth",
+      "screen": [
+        {
+          "name": "Login",
+          "API": {
+            "login": "api/v1/login",
+            "reset_password": "api/v1/reset_password"
+          }
+        },
+        {
+          "name": "Register",
+          "API": {
+            "login": "api/v1/register"
+          }
+        }
+      ]
+    },
+    {
+      "stack": "App",
+      "screen": [
+        {
+          "name": "Dashboard",
+          "API": {
+            "dashboard_data": "api/v1/dashboard_data",
+            "notification_count": "api/v1/notification_count"
+          }
+        }
+      ]
+    }
+  ]
+}

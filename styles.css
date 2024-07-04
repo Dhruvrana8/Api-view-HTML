@@ -1,0 +1,122 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.api-list {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+  perspective: 1000px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stack-header {
+  font-size: 1.8em;
+  margin-top: 20px;
+  color: #7e57c2; /* Lavender color */
+  padding: 10px; /* Added padding */
+  position: relative;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s, box-shadow 0.3s,
+    background-color 0.3s;
+}
+
+.stack-header.visible {
+  opacity: 1;
+  transform: translateY(0);
+  background-color: #f4f4f9; /* Background color when visible */
+}
+
+.stack-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%; /* Full width underline */
+  height: 3px;
+  background-color: #7e57c2; /* Lavender color */
+  transition: width 0.3s;
+}
+
+.screen-section {
+  margin-left: 20px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateZ(0);
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.screen-section.open {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.screen-header {
+  font-size: 1.4em;
+  margin-top: 15px;
+  color: #9575cd; /* Lighter lavender color */
+  border-bottom: 1px solid #9575cd;
+  padding-bottom: 3px;
+  padding: 5px 10px; /* Added padding */
+  position: relative;
+  cursor: pointer;
+  transform: perspective(1000px) translateZ(0);
+  transition: box-shadow 0.3s;
+}
+
+.screen-header:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.api-item {
+  margin: 10px 0;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.api-item:last-child {
+  border-bottom: none;
+}
+
+.api-item strong {
+  display: inline-block;
+  width: 200px;
+  color: #5e35b1; /* Darker lavender color */
+}
+
+.api-item a {
+  color: #5e35b1;
+  text-decoration: none;
+}
+
+.api-item a:hover {
+  text-decoration: underline;
+}
+
+.api-item:hover {
+  background-color: #f0f0f0;
+  transform: translateX(10px);
+}
